@@ -1,0 +1,26 @@
+alias cat='bat'
+alias zshrc='subl ~/.zshrc'
+alias subm='smerge'
+alias rspec="bundle exec rspec"
+alias drop_the_base='rake db:drop db:create db:dump:import db:migrate db:test:prepare'
+alias vpn-connect='osascript -e "tell application \"/Applications/Tunnelblick.app\"" -e "connect \"Work\"" -e "end tell"'
+alias vpn-disconnect='osascript -e "tell application \"/Applications/Tunnelblick.app\"" -e "disconnect \"Work\"" -e "end tell"'
+alias bys='bundle && yarn && hivemind'
+alias reset_rabbit='sudo rabbitmqctl stop_app && rabbitmqctl reset && rabbitmqctl start_app'
+alias dc='docker-compose'
+alias dcex='docker-compose exec'
+alias dcup='docker-compose up -d'
+alias dcupf='docker-compose up -d --force-recreate --remove-orphans'
+alias dcrspec='docker-compose exec web rspec'
+alias dcpry='docker-compose exec web pry-remote'
+alias dcc='docker-compose exec web rails c'
+alias dcb='docker-compose build app'
+alias dcbc='docker-compose build --no-cache app'
+alias dcl='docker-compose logs -f --tail=2000'
+alias dcapp='docker-compose run -rm app'
+alias dcimport='docker-compose run --rm import_db'
+alias dcseed='docker-compose run --rm seed_db'
+alias ds='docker stats'
+alias dss="docker-sync restart --app-name=${SYNC_NAME}"
+alias open="xdg-open"
+alias ls="ls -1"
