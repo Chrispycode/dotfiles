@@ -229,10 +229,10 @@ define_keymap(re.compile("^jetbrains-(?!.*toolbox).*$", re.IGNORECASE),{
     K("C-o"): K("C-n"),                         # Go to class
     K("C-Shift-o"): K("C-Shift-n"),             # Go to file
     K("C-M-o"): K("C-M-Shift-n"),               # Go to symbol
-    # K("Super-Right"): K("M-Right"),             # Go to next editor tab
-    # K("Super-Left"): K("M-Left"),               # Go to previous editor tab
+    K("C-M-Right"): K("M-Right"),             # Go to next editor tab
+    K("C-M-Left"): K("M-Left"),               # Go to previous editor tab
     K("C-l"): K("C-g"),                         # Go to line
-    K("M-Space"): K("C-Shift-i"),               # Open quick definition lookup
+    # K("M-Space"): K("C-Shift-i"),               # Open quick definition lookup
     K("C-Y"): K("C-Shift-i"),                   # Open quick definition lookup
     K("Super-Shift-b"): K("C-Shift-b"),         # Go to type declaration
     K("Super-Up"): K("M-Up"),                   # Go to previous
@@ -342,7 +342,7 @@ define_keymap(re.compile("spacefm", re.IGNORECASE),{
     K("RC-Shift-Right_Brace"):  K("C-Tab"),                 # Go to next tab
     K("RC-Shift-Left"):         K("C-Shift-Tab"),           # Go to prior tab
     K("RC-Shift-Right"):        K("C-Tab"),                 # Go to next tab
-    K("RC-Shift-N"):            K("RC-F"),	                # Create new folder is Ctrl+F by default
+    K("RC-Shift-N"):            K("RC-F"),                  # Create new folder is Ctrl+F by default
     K("RC-Backspace"):          [K("Delete"),K("Enter")],   # Move to Trash (delete, bypass dialog)
     K("RC-comma"):              [K("M-V"),K("p")],          # Overrides "Open preferences dialog" shortcut below
     # This shortcut ^^^^^^^^^^^^^^^ is not fully working in SpaceFM. Opens "View" menu but not Preferences.
@@ -413,7 +413,7 @@ define_keymap(re.compile(filemanagerStr, re.IGNORECASE),{
     ###  Open in New Window | Move to Trash | Duplicate file/folder                                         ###
     ###########################################################################################################
     K("RC-Super-o"):    K("RC-Shift-o"),        # Open in new window (or tab, depends on FM setup) [not universal]
-    K("RC-Backspace"):  K("Delete"),	        # Move to Trash (delete)
+    K("RC-Backspace"):  K("Delete"),            # Move to Trash (delete)
     # K("RC-D"):          [K("RC-C"),K("RC-V")],  # Duplicate file/folder (Copy, then Paste) [conflicts with "Add Bookmark"]
     ###########################################################################################################
     ###  To enable renaming files with the Enter key, uncomment the two keymapping lines just below this.   ###
@@ -556,9 +556,9 @@ define_keymap(lambda wm_class: wm_class.casefold() not in remotes,{
 
     # Wordwise
     K("RC-Left"): K("Home"),                      # Beginning of Line
-    # K("RC-Shift-Left"): K("Shift-Home"),          # Select all to Beginning of Line
+    K("RC-Shift-Left"): K("Shift-Home"),          # Select all to Beginning of Line
     K("RC-Right"): K("End"),                      # End of Line
-    # K("RC-Shift-Right"): K("Shift-End"),          # Select all to End of Line
+    K("RC-Shift-Right"): K("Shift-End"),          # Select all to End of Line
     # K("RC-Left"): K("C-LEFT_BRACE"),              # Firefox-nw - Back
     # K("RC-Right"): K("C-RIGHT_BRACE"),            # Firefox-nw - Forward
     # K("RC-Left"): K("M-LEFT"),                    # Chrome-nw - Back
@@ -575,7 +575,6 @@ define_keymap(lambda wm_class: wm_class.casefold() not in remotes,{
     K("RC-Backspace"): K("C-Shift-Backspace"),    # Delete Entire Line Left of Cursor
     K("Alt-Delete"): K("C-Delete"),               # Delete Right Word of Cursor
     # K(""): pass_through_key,                      # cancel
-    # K(""): K(""),                                 #
 }, "General GUI")
 
 define_keymap(lambda wm_class: wm_class.casefold() not in mscodes,{
